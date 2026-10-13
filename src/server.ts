@@ -45,7 +45,9 @@ app.post('/users', async (request, reply) => {
 
   return reply.code(201).send(user)
 })
+  
+const port = Number(process.env.PORT) || 3333
 
-app.listen({ port: 3333 }).then(() => {
-  console.log('HTTP Server Running!')
+app.listen({ port }).then(() => {
+  console.log(`Rodando na porta: ${port}`)
 })
